@@ -2,7 +2,7 @@
 
     "name": "Start on Heroku: Node.js",
     "description": "My express project",
-    "repository": "https://github.com/DarrylChen12/DarrylChen12.github.io",
+    "repository": "https://github.com/DarrylChen12/darrylherokuapp",
     "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
     "keywords": ["node", "express", "heroku"],
     "image": "heroku/nodejs"
