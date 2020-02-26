@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+html,body {
+  font-size: 14px;
+  box-sizing: inherit;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  width: 16px;
+  min-width: 1640px;width: 16px;
+  min-width: 1640px;width: 16px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artists {
+  height: 80vh;
+  width: 100vw;
+}
+
+.artists_inside {
+  width: 500px;
+}
+
+.artists_header {
+  height: 125px;
+  width: inherit;
+  align-items: center;
+}
+
+.artists_title {
+  height: 50px;
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px;
+  align-items: center;
+  font-weight: 700;
+  text-align: uppercase;
+  font-size: 1.9rem;
+}
+
+.artists_search_box input {
+  width: 80%;
+  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.artists_search_box{
+
+  width: 70%;
+}
+
+#artists_items {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+}
+
+.artists_item {
+  height: 100px;
+  width: inherit;
+  background-color: white;
+  border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.artists_item:hover {
+  background-color: coral;
+}
+
+.artists_item_left {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artists_item_description p {
+  position: relative;
+  bottom: 15px;
+}
+
+.delete{
+  height: 20px;
+  margin: 10px;
+  float: right;
+ 
+}
+
+img {
+  height: 75px;
+  width: 75px;
+}
+
+#artists_hidden {
+  display: none;
+}
+
+#header_search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#artist{
+  width: 80%;
+  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+#about{
+  width: 80%;
+  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+#imageurl{
+  width: 80%;
+  margin: 20px;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+@media (max-width: 1640px) {
+  .container {
+    width: 1440px;
+    min-width: 1440px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .container {
+    width: 1280px;
+    min-width: 1280px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .container {
+    width: 1040px;
+    min-width: 1040px;
+  }
+}
+
+@media (max-width: 986px) {
+  .container {
+    width: 768px;
+    min-width: 768px;
+  }
+}
