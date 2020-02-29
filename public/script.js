@@ -78,30 +78,42 @@ function addArtist(name=null,about=null,url=null, store=true) {
 
 
 
-function searchArtist(){
+async function searchArtist(){
 
     let term = document.getElementById('text').value.toUpperCase()
-    let content  = document.querySelectorAll('h3');
-    if(term != ""){
-      for (i = 0; i < content.length; i++) {
-        if(content[i].innerText.toUpperCase().search(term) < 0){
-          content[i].parentNode.parentNode.setAttribute('style', 'display: none');
-
+    let pagecontent  = document.querySelectorAll('h3');
+    let jsonBlocks;
+    try {
+      var response = await fetch('/search');
+      jsonBlocks = await response.text();
+      console.log(jsonBlocks)
+    } catch (e) {
+      // handle error
+      console.error(e)
+    }
+    let value = JSON.parse(jsonBlocks)
+    if(term != "") {
+      for(let i = 0; i < value.length; i++){
+        if(value[i].artist.toUpperCase().search(term) < 0){
+          pagecontent[i].parentNode.parentNode.setAttribute('style', 'display: none');
+        
         }else{
-
           let val = document.querySelector('.artists_item_left')
-          content[i].parentNode.parentNode.setAttribute('style', 'display: flex');
-          content[i].parentNode.parentNode.setAttribute('style',val);
-  
+          pagecontent[i].parentNode.parentNode.setAttribute('style', 'display: flex');
+          pagecontent[i].parentNode.parentNode.setAttribute('style',val);
+
         }
       }
     }else{
-      for (i = 0; i < content.length; i++) {
+      for (let i = 0; i < value.length; i++) {
         let val = document.querySelector('.artists_item_left')
-        content[i].parentNode.parentNode.setAttribute('style', 'display: flex');
-        content[i].parentNode.parentNode.setAttribute('style',val);
+        pagecontent[i].parentNode.parentNode.setAttribute('style', 'display: flex');
+        pagecontent[i].parentNode.parentNode.setAttribute('style',val);
       }
-    }
+}
+
+
+  
 }
 
 
@@ -118,6 +130,7 @@ function toggle(){
       x.style.display = 'none';
     }
 }
+
 
 
 
