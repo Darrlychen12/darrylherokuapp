@@ -63,6 +63,7 @@ const deleteFromFile = (artist, about, url) => {
 }
 
 checkIfFileExists();
+
 app.get('/add', (req, res) => {
     filesystem.readFile('public/artists.json', (err, data) => {
         if (err) return;
@@ -96,7 +97,7 @@ app.post('/delete', (req, res) => {
 
 })
 
-app.get('/search',(req,rest) => {
+app.get('/search',(req,res) => {
     filesystem.readFile('public/artists.json', (err,data) => {
         if (err) return;
         return res.json(JSON.parse(data))
