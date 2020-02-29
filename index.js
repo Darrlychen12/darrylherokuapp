@@ -86,7 +86,6 @@ app.post('/add', (req, res) => {
 })
 
 app.post('/delete', (req, res) => {
-    console.log("cunt")
     deleteFromFile(req.body.artist, req.body.about,req.body.url);
     const data = req.body;
     res.json({
